@@ -84,11 +84,11 @@
 > %>
 > ```
 
-       	4. 配置文件的编写
-        	5. [web.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/webapp/WEB-INF/web.xml)
-        	6. spring 的配置文件 [applicationContext.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/resources/applicationContext.xml)
-        	7. springMVC 配置 [dispatcherServlet-servlet.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/webapp/WEB-INF/dispatcherServlet-servlet.xml)
-        	8. mybatis 配置文件 [mybatis-config.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/resources/mybatis-config.xml)
+4. 配置文件的编写
+     - web.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/webapp/WEB-INF/web.xml)
+     - spring 的配置文件 [applicationContext.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/resources/applicationContext.xml)
+     - springMVC 配置 [dispatcherServlet-servlet.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/webapp/WEB-INF/dispatcherServlet-servlet.xml)
+     - mybatis 配置文件 [mybatis-config.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/resources/mybatis-config.xml)
 
 #### 建立数据库并创建表
 
