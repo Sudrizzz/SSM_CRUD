@@ -11,7 +11,7 @@
 
 #### 开始搭建环境
 
-1. 创建一个 Maven 工程（略）
+1. 创建一个 Maven 工程
 
 2. 引入项目需要的 Jar 包
 
@@ -48,8 +48,6 @@
   > ```xml
   > <scope>provided</scope>
   > ```
-  >
-  > ​
 
 - jstl 标准标签库
 
@@ -57,7 +55,7 @@
 
 - mybatis generator 
 
-3. 引入 Bootstrap 前端框架
+1. 引入 Bootstrap 前端框架
 
    下载 Bootstrap 框架，然后复制到项目的 webapp/static 目录下。
 
@@ -79,16 +77,14 @@
 > **注意：引入的时候，路径采用以 / 开始的相对路径 ，找资源是是以服务器的根路径。所以我们需要提前定义根路径**
 >
 > ```jsp
-> <%
-> 	pageContext.setAttribute("APP_PATH", request.getContextPath());
-> %>
+> <% pageContext.setAttribute("APP_PATH", request.getContextPath()) %>
 > ```
 
-4. 配置文件的编写
-     - web.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/webapp/WEB-INF/web.xml)
-     - spring 的配置文件 [applicationContext.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/resources/applicationContext.xml)
-     - springMVC 配置 [dispatcherServlet-servlet.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/webapp/WEB-INF/dispatcherServlet-servlet.xml)
-     - mybatis 配置文件 [mybatis-config.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/resources/mybatis-config.xml)
+1. 配置文件的编写
+   - [web.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/webapp/WEB-INF/web.xml)
+   - spring 的配置文件 [applicationContext.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/resources/applicationContext.xml)
+   - springMVC 配置 [dispatcherServlet-servlet.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/webapp/WEB-INF/dispatcherServlet-servlet.xml)
+   - mybatis 配置文件 [mybatis-config.xml](https://github.com/Sudrizzz/SSM_CRUD/blob/master/src/main/resources/mybatis-config.xml)
 
 #### 建立数据库并创建表
 
@@ -125,17 +121,17 @@ mybatis 自动生成的 mapper 文件中，没有能同时查出员工信息和�
 
 ```xml
 <resultMap id="WithDeptResultMap" type="com.atguigu.crud.bean.Employee">
-        <id column="emp_id" jdbcType="INTEGER" property="empId" />
-        <result column="emp_name" jdbcType="VARCHAR" property="empName" />
-        <result column="d_id" jdbcType="INTEGER" property="dId" />
-        <result column="gender" jdbcType="CHAR" property="gender" />
-        <result column="email" jdbcType="VARCHAR" property="email" />
-        <!-- 联合查询出的部门字段封装 -->
-        <association property="department" javaType="com.atguigu.crud.bean.Department">
-            <id column="dept_id" property="deptId" />
-            <result column="dept_name" property="deptName" />
-        </association>
-    </resultMap>
+	<id column="emp_id" jdbcType="INTEGER" property="empId" />
+	<result column="emp_name" jdbcType="VARCHAR" property="empName" />
+	<result column="d_id" jdbcType="INTEGER" property="dId" />
+	<result column="gender" jdbcType="CHAR" property="gender" />
+	<result column="email" jdbcType="VARCHAR" property="email" />
+	<!-- 联合查询出的部门字段封装 -->
+	<association property="department" javaType="com.atguigu.crud.bean.Department">
+		<id column="dept_id" property="deptId" />
+		<result column="dept_name" property="deptName" />
+	</association>
+</resultMap>
 ```
 
 添加带部门信息的 select 语句
